@@ -1,0 +1,29 @@
+---
+import SolidComponent from './frameworks/SolidComponent'
+
+// Detect components
+const components = import.meta.glob('/src/components/**/*.{svelte,vue,tsx,jsx}', {
+  eager: false,
+});
+
+const componentList = Object.keys(components).map((path) => ({
+  path,
+  framework: path.endsWith('.jsx') ? 'solid' : null
+  // framework: path.endsWith('.vue')
+  //   ? 'vue'
+  //   : path.endsWith('.tsx')
+  //   ? 'react'
+  //   : path.endsWith('.jsx')
+  //   ? 'solid'
+  //   : path.endsWith('.svelte')
+  //   ? 'svelte'
+  //   : null,
+}));
+---
+<div>
+  <h1>Detected Components</h1>
+  {componentList.map((component) => (
+    <div>hi</div>
+    <SolidComponent {...component} client:only="solid" />
+  ))}
+</div>
