@@ -1,0 +1,23 @@
+{
+  "name": "spectre",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "svelte": "^5.12.0",
+    "vue": "^3.3.8"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-vue": "^4.5.0",
+    "@sveltejs/vite-plugin-svelte": "^4.0.2",
+    "@vitejs/plugin-react": "^4.3.4",
+    "vite": "^5.0.0"
+  }
+}
