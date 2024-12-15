@@ -3,8 +3,8 @@
 </template>
 
 <script setup>
-import { useTemplateRef, onMounted } from 'vue'
-import { useSvelte } from '../../../packages/svelte/useSvelte'
+import { useTemplateRef, onMounted, onUnmounted } from 'vue'
+import { useSvelte, unmountSvelte } from '../../../packages/svelte/useSvelte'
 
 const props = defineProps({
   Component: {
@@ -22,5 +22,9 @@ onMounted(async () => {
 
     useSvelte(svelteComponent.default, root.value)
   }
+})
+
+onUnmounted(() => {
+  unmountSvelte()
 })
 </script>

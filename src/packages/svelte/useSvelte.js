@@ -1,4 +1,6 @@
-import { mount } from 'svelte'
+import { mount, unmount } from 'svelte'
+
+let app = null
 
 export const useSvelte = (SvelteComponent, rootValue) => {
 
@@ -6,10 +8,14 @@ export const useSvelte = (SvelteComponent, rootValue) => {
 
   el.setAttribute('id', 'svelte-root')
 
-  const app = mount(SvelteComponent, {
+  app = mount(SvelteComponent, {
     target: el,
     props: { some: 'property' }
   })
 
   rootValue.appendChild(el)
+}
+
+export const unmountSvelte = () => {
+  unmount(app)
 }

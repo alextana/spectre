@@ -11,7 +11,10 @@ const componentStore = useComponentStore()
 <template v-if="componentStore?.selectedComponent">
   <div class="grid place-content-center w-full h-full">
     <template v-if="componentStore.selectedComponent?.extension === 'svelte'">
-      <SvelteRenderer :Component="componentStore.selectedComponent.key" />
+      <SvelteRenderer
+        :key="componentStore.selectedComponent"
+        :Component="componentStore.selectedComponent.key"
+      />
     </template>
 
     <template
@@ -21,7 +24,10 @@ const componentStore = useComponentStore()
       "
     >
       <template v-if="config.jsxFramework === 'react'">
-        <ReactRenderer :Component="componentStore.selectedComponent.key" />
+        <ReactRenderer
+          :key="componentStore.selectedComponent"
+          :Component="componentStore.selectedComponent.key"
+        />
       </template>
       <template v-else> Solid compatibility coming soon! </template>
     </template>

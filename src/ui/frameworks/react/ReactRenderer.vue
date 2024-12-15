@@ -3,8 +3,8 @@
 </template>
 
 <script setup>
-import { useTemplateRef, onMounted } from 'vue'
-import { useReact } from '../../../packages/react/useReact'
+import { useTemplateRef, onMounted, onUnmounted } from 'vue'
+import { useReact, unmountReact } from '../../../packages/react/useReact'
 
 const props = defineProps({
   Component: {
@@ -23,5 +23,9 @@ onMounted(async () => {
 
     useReact(reactComponent.default, root.value)
   }
+})
+
+onUnmounted(() => {
+  unmountReact()
 })
 </script>
