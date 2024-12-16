@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import InnerComponent from './InnerComponent'
 
 const ReactComponent = ({ message = 'hello', initialCount = 5 }) => {
   const [count, setCount] = useState(initialCount)
@@ -14,6 +15,10 @@ const ReactComponent = ({ message = 'hello', initialCount = 5 }) => {
       >
         count is {count}
       </button>
+
+      <p>inner component</p>
+
+      <InnerComponent test='heyyy' />
     </div>
   )
 }

@@ -19,5 +19,7 @@ export const useReact = (ReactComponent, rootValue) => {
 }
 
 export const unmountReact = () => {
+  if (!root) return
+
   root.unmount()
 }

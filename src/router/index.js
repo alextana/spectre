@@ -2,6 +2,7 @@ import { createWebHistory, createRouter } from 'vue-router'
 
 import Home from '../ui/Home.vue'
 import ComponentList from '@/ui/ComponentList.vue'
+import ComponentProperties from '@/ui/ComponentProperties.vue'
 import UiCanvas from '@/ui/UiCanvas.vue'
 // import AboutView from './AboutView.vue'
 
